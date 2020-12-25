@@ -12,8 +12,8 @@ function replaceAt(string, index, replace) {
 }
 
 found =false;
-for( j = 0; j < entrada.length;j++){
-    for(i=0 ; i < entrada[j].length;i++ ){
+for (j = 0; j < entrada.length;j++){
+    for (i=0 ; i < entrada[j].length;i++ ){
 
       if (entrada[j][i] === '_'){
         if (!found) {
@@ -27,8 +27,8 @@ for( j = 0; j < entrada.length;j++){
       }
   }
 }
-for( j = 0; j < entrada.length;j++){
-    for(i=0 ; i < entrada[j].length;i++ ){
+for (j = 0; j < entrada.length;j++){
+    for (i=0 ; i < entrada[j].length;i++ ){
 
       if (entrada[j][i] === '*'){
         if (!found) {
@@ -43,7 +43,7 @@ for( j = 0; j < entrada.length;j++){
   }
 }
 
-for( palavra in entrada){
+for (palavra in entrada){
  console.log( entrada[palavra])
 }
 
