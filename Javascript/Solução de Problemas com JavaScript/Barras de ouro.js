@@ -84,4 +84,4 @@
     taxToPay[previousRoutes[v]] += taxToPay[v];
   }
   console.log(totalDistance.toString());
-});
+})();
