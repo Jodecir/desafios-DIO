@@ -1,39 +1,20 @@
 using System;
+using System.Text.RegularExpressions;
 
-class Validação {
-  static void Main() {
-    int notasLidas = 0;
-    bool opcao;
-    double x = 0;
-      
-    while (notasLidas < 2) {
-      opcao = true;
-      double nota = double.Parse(Console.ReadLine());
+class Validador {
+    static void Main (string[] args) {
+        while (true) {
+            string password = Console.ReadLine();
+            if (string.IsNullOrEmpty(password)) break;
 
-      if (nota < 0 || nota > 10) {
-        Console.WriteLine("nota invalida");
-      } else if (notasLidas == 0) {
-        x = nota;
-        notasLidas++;
-      } else if (notasLidas == 1) {
-        double media = (x + nota) / 2;
-
-        Console.Write("media = ");
-        Console.WriteLine(media.ToString("N2"));
+            Regex rx = new Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{6,32}$");
+            Match match = rx.Match(password);
         
-        while (opcao == true){
-          Console.WriteLine("novo calculo (1-sim 2-nao)");
-          double res = double.Parse(Console.ReadLine());
-
-          if (res ==  1) {
-            opcao = false;
-            notasLidas = 0;
-          } else if (res == 2) {
-            opcao = false;
-            notasLidas++;
-          }
+            if (match.Success) {
+                Console.WriteLine("Senha valida.");
+            } else { 
+                Console.WriteLine("Senha invalida.");
+            }  
         }
-      } 
     }
-  }
 }
