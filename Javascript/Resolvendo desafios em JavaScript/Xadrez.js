@@ -1,12 +1,12 @@
 let lines = gets().split("\n");
 
-var l = parseInt(lines[0]);
-var c = parseInt(lines[1]);
+var linhas = parseInt(lines[0]);
+var colunas = parseInt(lines[1]);
 
-if (l % 2 === 0)
-  if (c % 2 === 0) print(1);
+if (linhas % 2 === 0)
+  if (colunas % 2 === 0) print(1);
     else print(0);
-else if (l && c % 2 === 1) print(0);
+else if (linhas && colunas % 2 === 1) print(0);
   else print(1);
 
 // Desafio
